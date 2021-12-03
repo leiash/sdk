@@ -12,4 +12,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./decorators/method-decorators"), exports);
 __exportStar(require("./hooks"), exports);
+__exportStar(require("./interfaces/function-hook.interface"), exports);
+__exportStar(require("./interfaces/hook-collection.interface"), exports);
 //# sourceMappingURL=index.js.map

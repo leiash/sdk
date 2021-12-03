@@ -1,4 +1,4 @@
 export * from "./decorators/method-decorators"
 export * from "./hooks"
-// export * as Decorators from "./decorators/method-decorators"
-// export * as Hooks from "./hooks"
+export * from "./interfaces/function-hook.interface"
+export * from "./interfaces/hook-collection.interface"

@@ -1,9 +1,19 @@
+import { HookCollection } from "src/interfaces/hook-collection.interface";
+
 export const HANDLED = 0;
 export const CONTINUE = 1;
 const registeredHooks: { hookName: string, hook: Function, context: object }[] = [];
 
 export function hook(hookName: string, hook: Function, context: object) {
     registeredHooks.push({ hookName, hook, context });
+}
+
+export function registerHooks(object: any, hookCollection: HookCollection) {
+    Object.keys(hookCollection).forEach(functionName => {
+        const functionHook = hookCollection[functionName];
+        register(object, functionName, { postHookName: functionHook.postHook, preHookName: functionHook.preHook });
+
+    })
 }
 
 export function register(object: any, functionName: any, hooks?: { postHookName?: string, preHookName?: string }) {

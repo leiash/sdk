@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.register = exports.hook = exports.CONTINUE = exports.HANDLED = void 0;
+exports.register = exports.registerHooks = exports.hook = exports.CONTINUE = exports.HANDLED = void 0;
 exports.HANDLED = 0;
 exports.CONTINUE = 1;
 const registeredHooks = [];
@@ -8,6 +8,13 @@ function hook(hookName, hook, context) {
     registeredHooks.push({ hookName, hook, context });
 }
 exports.hook = hook;
+function registerHooks(object, hookCollection) {
+    Object.keys(hookCollection).forEach(functionName => {
+        const functionHook = hookCollection[functionName];
+        register(object, functionName, { postHookName: functionHook.postHook, preHookName: functionHook.preHook });
+    });
+}
+exports.registerHooks = registerHooks;
 function register(object, functionName, hooks) {
     (function (originalFunction) {
         let temp = object[functionName];

@@ -1,6 +1,6 @@
 {
   "name": "@leiash/sdk",
-  "version": "0.0.417",
+  "version": "0.0.420",
   "description": "SDK to write custom logic for your Leia Project",
   "author": "Bas Wilson",
   "license": "GPL-3.0",
