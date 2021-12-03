@@ -3,11 +3,11 @@
   "version": "0.0.417",
   "description": "SDK to write custom logic for your Leia Project",
   "author": "Bas Wilson",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/met-in-space/leia",
+    "url": "https://github.com/leia/sdk",
     "directory": ""
   },
   "main": "dist/index.js",
